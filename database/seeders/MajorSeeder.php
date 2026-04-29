@@ -74,7 +74,7 @@ class MajorSeeder extends Seeder
                 'Games developer',
                 'Web developer'
             ],
-            'video_link' => null,
+            'video_link' => 'Videos/programPoly.mp4',
             'created_at' => now(),
             'updated_at' => now(),
         ],
@@ -100,7 +100,7 @@ class MajorSeeder extends Seeder
                 'Information or Network Systems Manager',
                 'CCNA/CCNP Engineer'
             ],
-            'video_link' => null,
+            'video_link' => '/Videos/networkPoly.mp4',
             'created_at' => now(),
             'updated_at' => now(),
         ],
@@ -128,7 +128,7 @@ class MajorSeeder extends Seeder
                 'SAP Business analyst',
                 'IT Consultant'
             ],
-            'video_link' => null,
+            'video_link' => '/Videos/cloudPoly.mp4',
             'created_at' => now(),
             'updated_at' => now(),
         ],
@@ -156,7 +156,7 @@ class MajorSeeder extends Seeder
                 'Technology Analyst',
                 'Software Developer'
             ],
-            'video_link' => null,
+            'video_link' => '/Videos/analyticsPoly.mp4',
             'created_at' => now(),
             'updated_at' => now(),
         ] ];
