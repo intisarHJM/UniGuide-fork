@@ -72,7 +72,7 @@ class UniversitySeeder extends Seeder
                 'image' => 'images/AUBH2.jpg'
             ],
               [
-                'name' => ' University of Bahrain',
+                'name' => 'University of Bahrain',
                 'overview'=>'university in sekeer',
                 'requirements' => '',
                 'University_fees' => '',
