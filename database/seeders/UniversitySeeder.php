@@ -60,9 +60,8 @@ class UniversitySeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(), 
                 'image' => 'images/AUBH2.jpg'
-            ]
-
-         ]);
+            ],
+                     ]);
 
         
     }
