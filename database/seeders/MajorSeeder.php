@@ -12,20 +12,21 @@ class MajorSeeder extends Seeder
      */
     public function run(): void
     {
-        $ICT = \App\Models\College::where('name', 'School of ICT')->firstOrFail(); //so that if the college is not found the system will not crash. 
+        $BP = \App\Models\University::where('name', 'Bahrain Polytechnic')->firstOrFail();
+        $ICT = $BP->colleges()->where('name', 'School of ICT')->firstOrFail(); //so that if the college is not found the system will not crash. 
         $majors= [
         [
             'name' => 'Bachelor of Cybersecurity',
-            'description' => 'Cybersecurity in Bahrain Polyticnic is focused on protecting the network, digital systems and data from cyber threats
+            'description' => 'Cybersecurity in Bahrain Polytechnic is focused on protecting the network, digital systems and data from cyber threats
             The students will start learning core IT foundations such as programming, learning about systems and databases then they will dive into 
             cybersecurity topics such as ethical hacking, and defenses. 
-            The program follows a hands-on project based approach that prepares students fo real world challenges.',
+            The program follows a hands-on project based approach that prepares students for real world challenges.',
             'duration' => '4 years',
             'Study_Plan' => [
-                'Year 1' => 'Will focus on building a foundational skills in methamatics, programming, computer systems, networking and database.',
+                'Year 1' => 'Will focus on building a foundational skills in mathematics, programming, computer systems, networking and database.',
                 'Year 2' => 'Will give an  introduction to information security, web designs and applied IT projects.',
-                'Year3' => 'Focus on advanced IT and cybersecurity topics such as ethical hacking, AI, threat intelligence and defense startegies.',
-                'Year 4' => 'Focuses on the graduation project, real workd cybersecurity problems and industry based learning experience ',
+                'Year3' => 'Focus on advanced IT and cybersecurity topics such as ethical hacking, AI, threat intelligence and defense strategies.',
+                'Year 4' => 'Focuses on the graduation project, real world cybersecurity problems and industry based learning experience ',
             ],
             'Skills' => [
                 'Analytical thinking and problem solving skills.',
@@ -53,7 +54,7 @@ class MajorSeeder extends Seeder
             and problem solving. This program is based on hands-on project based learning.',
             'duration' => '4 years',
             'Study_Plan' => [
-                'Year 1' => 'Focuses on building an IT foundation skills in computer systems, programming, databases, netwoks, operating systems and 
+                'Year 1' => 'Focuses on building an IT foundation skills in computer systems, programming, databases, networks, operating systems and 
                 mathematical understanding.',
                 'Year 2' => 'Will dive deeper into programming languages, databases, web development, information security fundamentals and start 
                 applying the knowledge into projects.',
@@ -109,7 +110,7 @@ class MajorSeeder extends Seeder
             'description' => 'Cloud computing focuses on cloud architecture, enterprise systems, DevOps and cloud based solutions.',
             'duration' => '4 years',
             'Study_Plan' => [
-                'Year 1' => 'Focuses on developing a strong IT fundimentals for the students.',
+                'Year 1' => 'Focuses on developing a strong IT fundamentals for the students.',
                 'Year 2' => 'Dive into cloud computing concepts and learn about cloud service models.',
                 'Year 3' => 'Focuses on AI, DevOps, eCommerce systems and enterprise systems.',
                 'Year 4' => 'Will focus on developing an understanding of cloud security, Machine learning in cloud and advanced cloud topics.',
@@ -138,14 +139,14 @@ class MajorSeeder extends Seeder
             'duration' => '4 years',
             'Study_Plan' => [
                 'Year 1' => 'Building the fundamentals of IT such as programming, databases, networking and mathematics.',
-                'Year 2' => 'Develop a strong understanding of data structures, alghorithms, analysis of systems and databases development.',
+                'Year 2' => 'Develop a strong understanding of data structures, algorithms, analysis of systems and databases development.',
                 'Year 3' => 'Learn about data visualization, Automation of business processes, integrate with front-end and server side technologies and machine learning.',
                 'Year 4' => 'Have a deeper learning experience in data analytics and how to use generative AI for data insights'
             ],
             'Skills' => [
                 'The ability to analyze and interpret data to extract insights.',
                 'Have an understanding of data visualization techniques and be able to create effective visual representations of data.',
-                'The ability to apply machine learning algorithms tehcniques.' 
+                'The ability to apply machine learning algorithms techniques.' 
                 
             ],
             'Career_Opportunities' => [
@@ -166,5 +167,711 @@ class MajorSeeder extends Seeder
             $ICT->majors()->updateOrCreate(['name' => $major['name']], $major);
         } 
 
+        $SoB = $BP->colleges()->where('name', 'School of Business')->firstOrFail();
+        $majors= [
+        [
+            'name' => 'Bachelor of Digital and Social Media Marketing',
+            'description' => 'Digital and Social Media Marketing is about learning how to prompt an idea, a service or a product using the social media platforms. Students will learn how to create content, understand the audience behavior, use the data to improve the marketing and run online campaigns, this major combines creativity, analysis, technology and communication in order to help a business to reach their target audience ',
+            'duration' => '4 years',
+            'Study_Plan' => [
+                'Year 1' => 'Will focus on building the fundamental knowledges in business and marketing. ',
+                'Year 2' => 'Will focus on learning how to create digital content, what are the laws related to business , branding and how can a business use data for their benefits ',
+                'Year3' => 'Will be more focused on social media strategies and online marketing and advertisement ',
+                'Year 4' => 'Focus on more advanced digital marketing, strategies, gain practical experience and work on real project.',
+            ],
+            'Skills' => 
+            [
+                'The ability to create an engaging content for online and social media platforms',
+                'Gain an understanding of how to promote products online.',
+                'The ability to analyze the audience behavior and improve the marketing strategies accordingly. '
+            ],
+            'Career_Opportunities' => 
+            [
+                'Social Media Marketing Manager', 
+                'SEO Executive',
+                'Content Marketer',
+                'Public relations Excusive', 
+                'Marketing Analytics Analysis',
+                'Digital Marketing Manager',
+                'Entrepreneur', 
+                'Social Media Specialist'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Business Management',
+            'description' => 'Business management is about learning how organizations and companies work and how to precisely lead people, plan business strategies and make decisions in order to reach a business goal. The students will learn how to manage teams, how to solve problems, improve the business performance and organize project effectively. This major focuses on understanding business growth, leadership and communication..',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Build the basic business knowledge in business, finance, economics, management and communication skills.',
+                'Year 2' => 'Develop an understanding in business law, accounting, data analysis and research methods.',
+                'Year3' => 'Build an understanding of leadership, organizational behavior and organizational management. ',
+                'Year 4' => 'Learn about strategic management, development on enterprises and how to improve the quality in a work space.  ',
+            ],
+            'Skills' => 
+            [
+                'The ability to manage teams and lead people and organizations.', 
+                'The ability to analyze, plan and manage projects.',
+                'The understanding of how businesses operate and grows.'
+            ],
+            'Career_Opportunities' => 
+            [
+                'Entry Level Consultant', 
+                'Data Analyst',
+                'Management Consultant', 
+                'Project Manager',
+                'Business Manager',
+                'General Manager'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of  Marketing',
+            'description' => 'Marketing is about having an understanding of what people need and want, and then finding the best way to promote it. Students will learn how can a business attract customers, build a brand and create advertisement. This major combines business thinking, data analysis and creativity.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Basic introductions to finance, marketing, economics and fundamentals of business.',
+                'Year 2' => 'Dive into accounting, research methods, business laws and analytics.',
+                'Year3' => 'Advances on digital marketing, marketing researches, and create marketing campaigns.',
+                'Year 4' => 'Develop an advanced digital marketing, planning and management and work on real industry projects.',
+            ],
+            'Skills' => 
+            [
+                'The ability to understand customers need and behaviors.',
+                'Build an understanding of branding and how can a business build its image.',
+                'Skills in creating and managing marketing campaigns and advertisements.',
+                'The ability to analyze and use data to make decisions.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Marketing Manager',
+                'Digital Marketing Executive',
+                'Brand Manager',
+                'Product Manager',
+                'Marketing Coordinator',
+                'Public Relations Executive',
+                'SEO Executive',
+                'Entrepreneur'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Human Resource Management',
+            'description' => 'Human Resource (HR) Management, focuses on managing the people within an organization, it teaches how companies hire employees, support their development, manage employers performance and create a positive work environment. Students will learn how to build a balance between the needs of employees and the organization, to ensure that both can grow together.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Build the basic understandings of business such as economics, finance and marketing.',
+                'Year 2' => 'Develop an understanding of business operations, human resource basics and research methods.',
+                'Year3' => 'Focuses on HR specializations such as employee relations, leadership and talent management. ',
+                'Year 4' => 'Learn about advanced HR strategies like performance management, HR strategies, international HR management and contemporary issues in HR.',
+            ],
+            'Skills' => 
+            [
+                'Understanding how to effectively manage and support employees within an organization.',
+                'The ability to train and develop talent.',
+                'Develop a strong communication skills.',
+                'Have an understanding of laws, regulations, ethics and professional standards  related to business.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'HR manager',
+                'HR Consultant',
+                'Training Manager',
+                'Employee Relations Specialist'
+		
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]
+        ];
+        foreach($majors as $major){
+            $SoB->majors()->updateOrCreate(['name' => $major['name']], $major);
+        } 
+
+        $SoLM = $BP->colleges()->where('name', 'School of Logistics and Maritime Studies')->firstOrFail();
+        $majors= [ 
+        [
+            'name' => 'Bachelor of International Logistics Management',
+            'description' => 'International Logistics Management focuses on how goods and services are moving around the world. It teaches how the products are stored, transported and delivered efficiently. Students will learn how the global supply chains work, and how the products will reach the right place at the right time in a cost effective way.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of logistics and supply chain , transport systems and geography.',
+                'Year 2' => 'Develop the knowledge in areas like  transportation methods, logistic operations and laws of transportations ',
+                'Year3' => 'Focuses on managing logistics operations, passenger transport, research methods and urban transport. ',
+                'Year 4' => 'Study advanced topics such as airport management, the use of AI in logistics, data analysis, transport communication, sustainability and finish an industry based project.',
+            ],
+            'Skills' => 
+            [
+                'Develop an understanding of how global supply chains and transportation systems work.',
+                'Develop the ability to manage the movements of products effectively.',
+                'Knowledge of logistics technologies and data analysis tools.',
+                'Have an awareness on sustainability and environmental issues in transport.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Logistics Manger',
+                'Warehouse Supervisor', 
+                'Airport and Airfreight Operations Manager',
+                'Military Enforcer',
+                'Policy and Planning Development Manager',
+                'Container Inspector',
+                'Maritime , Port or Aviation Security'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Science in Supply Chain Management',
+            'description' => 'Supply Chain Management focuses on how products are created, moved and delivered from the source to the customer. It teaches how businesses manage the flow of goods, information and resources, from raw materials to finished products. Students learn how to plan, organize and improve processes like purchasing, production, transportation and delivery to make sure everything runs efficiently and reaches customers on time.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of logistics, supply chain and business concepts.',
+                'Year 2' => 'Build a knowledge in transportation systems and supply chain operations.',
+                'Year3' => 'Focuses on procurement, manufacturing planning, logistics management and research methodologies.',
+                'Year 4' => 'Focus on advanced topics such as risk management, AI in supply chain, data analysis and completing an industry based project.',
+            ],
+            'Skills' => 
+            [
+                'Understanding how supply chain operates starting from production to delivery.',
+                'The ability to plan and manage inventory, logistics and procurement processes.',
+                'Develop the knowledge of data analysis and modern technologies in the supply chain field.',
+                'Have the ability to mange arising risks and adapt to the supply chain challenges.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Supply Chain Manager', 
+                'Procurement Manger',
+                'Operations Manager',
+                'Inventory Controller'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]
+        ]; 
+        foreach($majors as $major){
+                $SoLM->majors()->updateOrCreate(['name' => $major['name']], $major);          
+        }
+
+        
+        $SoAF = $BP->colleges()->where('name', 'School of Accounting and Finance')->firstOrFail();
+        $majors= [
+        [
+            'name' => 'Bachelor of Science in Financial Technology',
+            'description' => 'Financial Technology focuses on how technology is used to improve and automate financial services. It combines finance, business and computer technology to create faster, safer and more efficient ways to manage money. Students learn how digital systems like online banking, mobile payments, cryptocurrencies and financial apps work and how to build and improve these systems for modern businesses and users.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of  business, economics, finance and computer systems.',
+                'Year 2' => 'Build a knowledge in programming, databases, information security, business analysis and financial technology.',
+                'Year3' => 'Focuses advanced topics like data mining, cloud computing, corporate finance an investment management. ',
+                'Year 4' => 'Focuses on blockchain, cryptocurrencies, financial risk management and an industry based project.',
+            ],
+            'Skills' => 
+            [
+                'Develop an understanding of how the financial system and technology works together.',
+		        'Have a basic programming knowledge.',
+                'Develop the ability to analyze financial data and build digital financial solutions.',
+                'Develop a problem solving skill in the financial and technology enviroment.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'FinTech Analyst',
+                'FinTech Product Manager', 
+                'FinTech Software Developer',
+                'Blockchain Developer',
+                'Compliance Expert',
+                'Financial Analyst'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Accounting in Business',
+            'description' => 'Accounting is about understanding the money flow in a business. It teaches you how companies record their income and expenses, manage budgets and make financial decisions. Students learn how to track money, prepare financial reports and understand how businesses stay profitable and organized.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of business such as management, marketing, communication skills and economics ',
+                'Year 2' => 'Build a strong knowledge in accounting, information systems, business laws, research methods and data analysis',
+                'Year3' => 'Focus on Accounting topics such as financial accounting, taxation, accounting systems and cost accounting',
+                'Year 4' => 'Study more advanced topics including auditing, financial management and work on a real world industry project.',
+            ],
+            'Skills' => 
+            [
+                'Develop an understanding of how money flows in the business',
+                'Develop the skill of how to prepare and read financial reports.',
+                'Learn how to use accounting tools and softwares.',
+                'The ability to communicate financial informations clearly.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Cost Accountant', 
+                'Financial Accountant',
+                'System Accountant',
+                'CFO (Chief Finance Officer)',
+                'CEO',
+                'Financial Analysis',
+                'Auditor (Internal or External)',
+                'Business Consultant'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Banking and Finance',
+            'description' => 'Banking and Finance is about how money is managed in banks, companies and markets. It teaches you how people and businesses save, invest, borrow and grow their money. Students learn how banks work, how investments are made and how to make smart financial decisions',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of business like management, economics and marketing.',
+                'Year 2' => 'Build a knowledge in accounting, finance, data analysis and business law.',
+                'Year3' => 'Focuses on financial topics such as corporate finance, money and banking, investment and financial risks.',
+                'Year 4' => 'Focus on advanced topics such as international finance, derivatives, financial markets and work on a real world industry project.',
+            ],
+            'Skills' => 
+            [
+                'Understanding how banks and financial systems work.',
+                'Learn how to manage and invest on money.',
+                'Develop the ability to analyze market trends and financial data.',
+                'Have a strong understanding of financial risks and how to manage them properly.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Investment banker', 
+                'Stock broker',
+                'Corporate treasury',
+                'Risk Analyst',
+                'Financial Analyst',
+                'Financial manager'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]            
+        ];
+        foreach($majors as $major){
+            $SoAF->majors()->updateOrCreate(['name' => $major['name']], $major);
+        }
+
+        $SoCM = $BP->colleges()->where('name', 'School of Creative Media')->firstOrFail();
+        $majors= [
+        [
+            'name' => 'Bachelor of Web Media',
+            'description' => 'Web Media focuses on creating and managing websites, online experience and digital content. It combines business, design and technology. The student will build modern websites and digital platforms used in e-commerce.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Develop the basic understanding of web development, eMarketing, internet and multimedia.',
+                'Year 2' => 'Focus on building and developing technical and creative skills such as content management,  mobile web development and animation.',
+                'Year3' => 'Study advanced topics such as user experience, web marketing and human computer interactions.',
+                'Year 4' => 'Work on advanced interactive applications, ecommerce, web media and  cooperative project.',
+             ],
+            'Skills' => 
+            [
+                'Have the ability to design and develop a modern responsive website.',
+                'Learn how to understand and build a website based on the user experience.',
+                'The ability to work with eCommerce platforms',
+                'The ability to create animations and interactive media.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Web Designer', 
+                'User Interface Designer',
+                'User Experience Designer',
+                'Gen AI Creative Content Specialist',
+                'E-Commerce Consultant',
+                'eBusiness Entrepreneur',
+                'Digital Marketing Specialist',
+                'Search Engine Marketing Expert'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ], 
+        [
+            'name' => 'Bachelor of Film and Animation',
+            'description' => 'Film and Animation is about creating movies, videos and animated content. It teaches you how to tell stories using visuals, sound and motion. Students learn filming, editing, animation and audio production to create content for movies, social media, games and more.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of the process of film making, animation and audio production.',
+                'Year 2' => 'Focus on building technical skills in screenwriting, storytelling, 3D animation and visual design, while also building an understanding on film industry(the history of cinematic arts).',
+                'Year3' => 'Advance more in animation, sound and film making and also work on real projects.',
+                'Year 4' => 'Focus on advanced productions like character animation and directing and also complete a senior project that shows your skills and understanding.',
+             ],
+            'Skills' => 
+            [
+                'Develop the storytelling skills and how to communicate your ideas visually.',
+                'develop sound design skills.',
+                'The ability to edit ad create videos and films.',
+                'An understanding of animation techniques such as 2D and 3D.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Video producer', 
+                'Filmmaker',
+                'Cinematographer',
+                'Director',
+                'Producer',
+                'Audio Engineer',
+                'Sound designer',
+                'Character Designer and Animator'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ], 
+        [
+            'name' => 'Bachelor of Arts in Animation and Visual Effects',
+            'description' => 'Animation and Visual Effects is about creating animated content and special effects used in movies, games and digital media. It teaches you how to design characters, create 2D and 3D animations and add visual effects like explosions or fantasy scenes using computer software.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of animation, audio production and filmmaking.',
+                'Year 2' => 'Build storytelling, 3D modelling an character design skills, while also developing an understanding of how the media and film industry works.',
+                'Year3' => 'Focus on advanced topics in visual effects and animation such as special effects, cinematography ,digital environment and 3D animation.',
+                'Year 4' => 'Learn hot topics such as virtual reality(VR), augmented reality (AR) and finish your final year project.',
+             ],
+            'Skills' => 
+            [
+                'Develop skills in visual effects for games and movies.',
+                'The ability to design digital environments.',
+                'Understand creative visual communication.',
+                'An understanding of animation techniques such as 2D and 3D.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Producer',
+                'Graphic Designer',
+                'AR & VR content Creator',
+                'Technical Director'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]
+        ];
+        foreach($majors as $major){
+            $SoCM->majors()->updateOrCreate(['name' => $major['name']], $major);
+        }
+
+        $SoE = $BP->colleges()->where('name', 'School of Engineering')->firstOrFail();
+        $majors= [
+        [
+            'name' => 'Bachelor of Mechanical Engineering',
+            'description' => 'Mechanical Engineering is about designing, building and improving machines and systems we use every day. It teaches you how things like engines, air conditioning systems, machines and tools work. Students learn how to solve real-world problems by creating efficient and practical mechanical solutions.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics, mathematics and basic concepts of engineering.',
+                'Year 2' => 'Build knowledge in mechanics, materials, thermodynamics and how machines work.',
+                'Year3' => 'Focus on applying engineering skills in manufacturing, control systems and real world problem solving.',
+                'Year 4' => 'Focus on advanced topics such as heat transfer, machine design, energy systems and complete a senior project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to design mechanical components and systems.',
+                'An understanding on how the machines and mechanical systems function.',
+                'The ability to use engineering softwares and tools.',
+                'Develop critical thinking in an engineering environments.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Mechanical Engineer',
+                'Industrial process engineer',
+                'Reliability and Maintenance engineering',
+                'Mechanical manufacturing', 
+		        'Computer-aided manufacturing'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Electronics Engineering',
+            'description' => 'Electronics Engineering is about designing and building electronic systems like circuits, devices and communication systems. It teaches you how technologies like smartphones, computers and smart systems work. Students learn how to create and improve electronic solutions used in everyday life and modern industries.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics, mathematics and basic concepts of electrics and mechanics.',
+                'Year 2' => 'Build knowledge in electronic circuits, digital systems, Automatic controls and signals.',
+                'Year3' => 'Focus on advanced topics such as telecommunications, embedded systems and electronics through working on practical projects.',
+                'Year 4' => 'Focus on specialized areas such as microcontrollers, Sustainability and complete a senior project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to design mechanical components and systems.',
+                'An understanding on how the machines and mechanical systems function.',
+                'The ability to use engineering softwares and tools.',
+                'Develop critical thinking in an engineering environments.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Electronics Engineer',
+                'Work in Petrochemical Industry',
+                'Design of hardware and software embedded systems',
+                'computer-aided design (CAD) for the Electronics sector.'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Electrical Engineering',
+            'description' => 'Electrical Engineering is about working with electricity, power systems and electrical equipment used in homes, buildings and industries. It teaches you how electricity is generated, transmitted and used safely. Students learn how to design and manage electrical systems like power grids, machines and automation systems.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics, mathematics and basic concepts of electricity.',
+                'Year 2' => 'Build knowledge in circuits, digital systems, electrical machines and basic automation control systems.',
+                'Year3' => 'Focus on PLC programming, practical applications, signals and electronics.',
+                'Year 4' => 'Focus on advanced topics such as electrical drives, power systems and also work on senior project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to manage and design electrical installations and systems',
+                'An understanding on how machines and electrical power systems function.',
+                'The ability to use engineering softwares and tools.',
+                'Develop problem solving skills for engineering challenges.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Power System Engineer',
+                'Electrical Engineer',
+                'Automation Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Electromechanical Engineering',
+            'description' => 'Electromechanical Engineering combines electrical and mechanical engineering. It focuses on systems that use both electricity and mechanical parts like robots, machines and automated systems. Students learn how to design, build and maintain systems used in industries such as manufacturing, energy and robotics',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics, mathematics and basic concepts of both electricity and mechanics.',
+                'Year 2' => 'Build knowledge in circuits, thermodynamics, fluid mechanics,  machines and basic control systems.',
+                'Year3' => 'Focus on learning about advanced topics such as power electronics, electrical machines and system control and environmental sustainability.',
+                'Year 4' => 'Focus on specialized topics of the field such as heat transfer and power systems, and complete a senior project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to manage, design and maintain automated systems',
+                'An understanding of mechanical and electrical systems and the way they work together.',
+                'The ability to use engineering softwares and tools.',
+                'Develop problem solving skills for engineering challenges.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Electromechanical Engineer',
+                'Robotics Engineer',
+                'Automation Engineer', 
+		        'Manufacturing Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Communications and Networks Engineering',
+            'description' => 'Communications and Networks engineering is about how devices connect and communicate with each other. It teaches you how the internet, mobile networks, Wi-Fi and communication systems work. Students learn how to design, build, and manage networks that allow people and systems to share information quickly and safely.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as mathematics, electrical and mechanical basics.',
+                'Year 2' => 'Build knowledge in circuits, data communication, signals, programming and computer system.',
+                'Year3' => 'Focus on communication systems, wireless technologies,signal processing and networking.',
+                'Year 4' => 'Focus on studying advanced topics such as advanced networking, telecommunication networks, microwave & optical communications and complete a final year project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to design and manage communication systems and computer networks.',
+                'An understanding on how communication systems and networks work.',
+                'The ability to analyze and troubleshoot issues related to network .',
+                'Develop problem solving skills for technical problems.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Network Engineer',
+                'Network Administrator',
+                'IT Specialist',
+		        'Wireless Communication Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Chemical and Industrial Processes Engineering',
+            'description' => 'Chemical and Industrial Processes engineering is about how raw materials are turned into useful products. It teaches you how industries like oil, gas, food and manufacturing produce things safely and efficiently. Students learn how to design and improve processes that turn chemicals into everyday products we use.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of engineering including mathematics, chemistry and physics.',
+                'Year 2' => 'Build knowledge in chemical concepts, energy & material balance and basic industry processes.',
+                'Year3' => 'Focus on fluid mechanics, chemical processes and heat transfer.',
+                'Year 4' => 'Focus on studying advanced topics such as sustainability, reaction engineering and complete the final year projetc.',
+             ],
+            'Skills' => 
+            [
+                'The ability to analyze and improve safety in chemical processes.',
+                'An understanding on how chemical systems work.',
+                'Develop problem skills in solving technical problems.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Chemical Engineer',
+                'Plant Administrator',
+                'Energy Engineer',
+		        'Quality control Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of Civil Engineering',
+            'description' =>'Civil engineering is about designing and building the world around us. It teaches you how to create structures like buildings, roads, bridges and water systems. Students learn how to plan, design and manage construction projects to make sure they are safe, strong and efficient.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics and mathematics.',
+                'Year 2' => 'Build knowledge in engineering drawing, mechanics, construction material and surveying.',
+                'Year3' => 'Focus on civil centered topics such as hydraulics, water systems, structures and transportation engineering.',
+                'Year 4' => 'Focus on advanced topics such as geotechnical engineering,  steel design and complete a graduation project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to ensure safety in construction work.',
+                'An understanding on how infrastructures and buildings are designed and built.',
+                'The ability to use engineering tools.',
+                'The ability to analyze and solve construction and engineering problems.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Civil Engineer',
+                'Site Engineer',
+                'Geotechnical Engineer',
+                'Construction Manager', 
+		        'Water resources Engineer',
+                'Site Engineer', 
+                'Marine Engineer' 
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of  Industrial Instrumentation and Automatic Control Engineering',
+            'description' =>'Industrial Instrumentation and Automatic Control is about how machines and systems are monitored and controlled in industries. It teaches you how factories, power plants and production systems run automatically using sensors and control systems. Students learn how to design, manage, and maintain systems that keep machines working safely and efficiently.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics and mathematics.',
+                'Year 2' => 'Build knowledge in electronics, measurement systems, circuits and basic control systems.',
+                'Year3' => 'Focus on topics such as embedded systems, Industrial Communications and signals and systems .',
+                'Year 4' => 'Focus on advanced topics such as advanced sensors and actuators, digital signal processing  and work on a project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to design and manage control systems.',
+                'An understanding on how automated systems work.',
+                'The ability to work with sensors and electronic devices.',
+                'The ability to program an use automation tools.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Instrument Maintenance engineering Engineer',
+                'Industrial process engineering Engineer',
+                'Analytical Instrumentation Specialist',
+                'Power plants instrumentation Engineer', 
+		        'Control Room Operator'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of  Renewable and Clean Energy Engineering',
+            'description' =>'Renewable and Clean Energy engineering is about creating energy in ways that are safe for the environment. It teaches you how energy from sources like the sun, wind and other clean resources is produced and used. Students learn how to design and improve systems that generate energy without harming the planet.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics and mathematics.',
+                'Year 2' => 'Build knowledge in electrical systems, energy basics and sustainable energy concepts.',
+                'Year3' => 'Focus on renewable energy systems such as wind and solar systems as well as energy conversion  and  storage systems.',
+                'Year 4' => 'Focus on advanced topics in energy systems, sustainability and finish a graduation project',
+             ],
+            'Skills' => 
+            [
+                'The ability to design and manage clean energy solutions.',
+                'An understanding on how renewable energy systems function.',
+                'The ability to analyze energy systems.',
+                'The ability to solve world problems with renewable energy.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Solar Energy Engineer',
+                'Wind Energy Technician',
+                'Sustainable Energy Project Manager',
+                'Renewable Energy Systems Designer', 
+		        'Bioenergy Specialist',
+		        'Smart Grid Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name' => 'Bachelor of  Industrial Design and Process  Engineering',
+            'description' =>'Industrial Design and Process engineering focuses on improving how products are designed and how systems work in industries. It teaches you how to make processes faster, cheaper, safer and more efficient. Students learn how factories, companies and systems operate and how to design better products while considering people, technology and the environment.',
+            'duration' => '4 years',
+            'Study_Plan' => 
+            [
+                'Year 1' => 'Learn the basics of Engineering such as physics and mathematics.',
+                'Year 2' => 'Build knowledge in manufacturing processes, engineering graphics ,material, design and basics of probability and statistics.',
+                'Year3' => 'Focus on industrial systems  designs, operations research and Industrial safety engineering.',
+                'Year 4' => 'Focus on advanced topics such as AI in engineering, 3D printing, production planning,  aerodynamics in industrial design and submitting a graduation project.',
+             ],
+            'Skills' => 
+            [
+                'The ability to design products and production systems.',
+                'An understanding on how industrial systems and processes function.',
+                'The ability to use engineering tools such as CAD.'
+            ],
+            'Career_Opportunities' => 
+            [
+                'Project Planning Engineer',
+                'Plant Engineer',
+                'Occupational Health and Safety engineer',
+                'Marketing Engineer', 
+		        'Energy Efficiency Engineer',
+		        'Occupational Health and Safety Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]      
+        ];
+        foreach($majors as $major){
+            $SoE->majors()->updateOrCreate(['name' => $major['name']], $major);
+        }
     }
 }

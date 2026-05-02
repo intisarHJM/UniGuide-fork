@@ -53,6 +53,8 @@ class CollegesSeeder extends Seeder
            
         ]);
 
+        $AGU = \App\Models\University::where('name', 'Arabian Gulf University')->first();
+
 
 
     
