@@ -73,7 +73,7 @@ class UniversitySeeder extends Seeder
                 'image' => 'images/UoB.jpg'
             ], 
             [
-                'name' => 'Arabian Gulf University',
+                'name' => 'Arabian Gulf University', 
                 'overview'=>'Arabian Gulf University is a public university located in Manama,specialized in providing high quality education in medicine, health sciences, education, and technology programs for students across the Gulf region.',
                 'requirements' => 'To be accepted at Arabian Gulf University, applicants must be GCC citizens nominated by the Ministry of Education or Higher Education, complete the application process with all required documents, successfully pass the personal interview, and be medically fit. Non-GCC Arab residents in GCC countries may apply through the fee-paying system and must pay the required tuition fees before the beginning of studies.',
                 'University_fees' => 'Medicine (M.D.): 18,300 BHD/year with a 5% annual increase. Nursing: 4,000 BHD/year.',
