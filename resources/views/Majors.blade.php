@@ -59,9 +59,11 @@
                 @endforeach
             </div>
         </div>
-
-        <div class="mt-6 text-center ">
-            <a href="{{ route('colleges.show', $major->college_id) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-lg">
+        <div class="flex gap-4 justify-center">
+            <a href="{{ route('home') }}" class="btn btn-outline">
+                Back to Universities
+            </a>
+            <a href="{{ route('colleges.show', $major->college_id) }}" class="btn btn-outline">
                 Back to College
             </a>
         </div>

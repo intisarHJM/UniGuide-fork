@@ -30,7 +30,7 @@ class UniController extends Controller
             'Image' => 'images/Poly.jpg'
             ],
             [
-            'University' => 'Araibian Gulf University',
+            'University' => 'Arabian Gulf University',
             'Overview' => '......',
             'Type' => 'Public University',
             'Image' => 'images/AGU.jpg'
