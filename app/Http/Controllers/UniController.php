@@ -12,7 +12,7 @@ class UniController extends Controller
      */
 
     //this one will handle the homepage
-    public function index() 
+    public function index()
 
     {
         //trying to have the uni's view:
@@ -20,7 +20,7 @@ class UniController extends Controller
             [
             'University' => 'University of Bahrain',
             'Overview' => '......',
-            'Type' => 'Public University', 
+            'Type' => 'Public University',
             'Image' => 'images/UoB.jpg'
             ],
             [
@@ -30,12 +30,12 @@ class UniController extends Controller
             'Image' => 'images/Poly.jpg'
             ],
             [
-            'University' => 'Araibian Gulf University',
+            'University' => 'Arabian Gulf University',
             'Overview' => '......',
             'Type' => 'Public University',
             'Image' => 'images/AGU.jpg'
             ]
-            
+
         ];
         $PrivateUniversities = [
         [
@@ -64,7 +64,7 @@ class UniController extends Controller
             'Image' => 'images/UTB.jpg'
             ],
             [
-            'University' => 'Ahlia University ',
+            'University' => 'Ahlia University',
             'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/AU.jpg'
@@ -98,23 +98,23 @@ class UniController extends Controller
             'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/ASU.jpg'
-            ], 
+            ],
             [
             'University' => 'British University of Bahrain',
             'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/BUBH.jpg'
             ]
-            
+
         ];
 
         return view('home', [
-        'PublicUniversities'=> $PublicUniversities, 
+        'PublicUniversities'=> $PublicUniversities,
         'PrivateUniversities' => $PrivateUniversities
         ]);
     }
-    
-    
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -138,14 +138,14 @@ class UniController extends Controller
     public function show($name)
     {
         //What I did first: return view('university', ['name'=>$name]);
-        //$university = University::where('name',$name)->with('colleges')->first(); 
+        //$university = University::where('name',$name)->with('colleges')->first();
         //return view('university', compact ('university'));
         $university = University::where('name', $name)->with('colleges')->first();
 
         return view('university', [
             'university' =>$university,
             'name' => $name
-        ]); 
+        ]);
     }
 
     /**

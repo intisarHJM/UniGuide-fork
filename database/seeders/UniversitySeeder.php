@@ -74,7 +74,6 @@ class UniversitySeeder extends Seeder
                 'image' => 'images/AGU.jpg'
             ],
             [
-
                 'name' => 'Royal University for Women',
                 'overview' => 'Royal University for Women is a private university located in Riffa, dedicated to providing high-quality education for women in fields such as art and design, business, law, engineering, technology, and digital media.',
                 'requirements' => 'To be accepted at Royal University for Women, applicants must demonstrate English language proficiency through IELTS with a minimum score of 5.5, TOEFL, or the university placement test. Some programs may require interviews, portfolios, or additional documents. Applicants to Business programs must achieve at least 60% in Mathematics, while Architecture applicants from the scientific stream must achieve at least 60% in Mathematics and Physics.',
@@ -110,7 +109,7 @@ class UniversitySeeder extends Seeder
             [
 
             'name' => 'University of Bahrain',
-            'overview'=>'The University of Bahrain (UoB) is a public university established in 1986 and is the largest higher‑education institution in the Kingdom of Bahrain, serving over 30,000 students across multiple campuses and nine colleges in fields such as engineering, business, IT, law, and health sciences.',
+            'overview'=>'The University of Bahrain (UoB) is a public university established in 1986 and is the largest higher-education institution in the Kingdom of Bahrain, serving over 30,000 students across multiple campuses and nine colleges in fields such as engineering, business, IT, law, and health sciences.',
             'requirements' => 'Applicants must hold a secondary school certificate or its equivalent with a minimum cumulative GPA of 70%, obtained within the last year, and must not be enrolled in any other higher‑education institution; they may also need to take aptitude tests or interviews depending on the program.',
             'University_fees' => 'Undergraduate tuition is heavily subsidized for Bahraini nationals and typically starts around 250 BHD per year, while international students generally pay significantly higher fees, often starting around 2,200 BHD per year depending on the program.',
             'available_scholarships' => 'The University of Bahrain awards fully funded study‑abroad missions for selected Bahraini students and staff, covering tuition, monthly stipends, travel, insurance, and related costs; recipients must be Bahraini nationals, meet academic and professional criteria, and serve at the university for a period at least equal to or double the mission duration depending on category.',
@@ -118,18 +117,44 @@ class UniversitySeeder extends Seeder
             'updated_at' => now(),
             'image' => 'images/UoB.jpg'
 
-                        ],
-
-[
-        'name' => 'Bahrain Institute of Banking and Finance',
-        'overview' => 'The Bahrain Institute of Banking and Finance (BIBF) is a leading specialized institute in Bahrain that offers British accredited degrees in banking, finance, economics, and management through partnerships with renowned UK universities such as the University of London, Bangor University, and the University of Strathclyde, along with professional programs in Islamic banking, insurance, FinTech, and digital transformation.',
-        'requirements' => 'Applicants typically need a good secondary school GPA (often above 80%), a strong English language score on IELTS or TOEFL due to full English instruction following British standards, and may be required to pass an entrance exam or personal interview conducted by the institute.',
-        'University_fees' => 'Annual tuition fees at BIBF are among the highest in Bahrain, ranging approximately from 3,500 to 4,500 BHD per year depending on the UK partner university and the number of modules; additional registration and textbook fees are paid to the British partner universities, while professional courses (such as CFA or ACCA-linked programs) have separate fees that vary by duration and certification level.',
-        'available_scholarships' => 'BIBF offers partial merit based scholarships for high achieving students, and several Bahraini banks sponsor employees or their children to study there, along with access to an international UK accredited degree and a world class Bloomberg equipped Dealing Room for practical trading experience.',
+            ],
+            [
+            'name' => 'Bahrain Institute of Banking and Finance',
+            'overview' => 'The Bahrain Institute of Banking and Finance (BIBF) is a leading specialized institute in Bahrain that offers British accredited degrees in banking, finance, economics, and management through partnerships with renowned UK universities such as the University of London, Bangor University, and the University of Strathclyde, along with professional programs in Islamic banking, insurance, FinTech, and digital transformation.',
+            'requirements' => 'Applicants typically need a good secondary school GPA (often above 80%), a strong English language score on IELTS or TOEFL due to full English instruction following British standards, and may be required to pass an entrance exam or personal interview conducted by the institute.',
+            'University_fees' => 'Annual tuition fees at BIBF are among the highest in Bahrain, ranging approximately from 3,500 to 4,500 BHD per year depending on the UK partner university and the number of modules; additional registration and textbook fees are paid to the British partner universities, while professional courses (such as CFA or ACCA-linked programs) have separate fees that vary by duration and certification level.',
+            'available_scholarships' => 'BIBF offers partial merit based scholarships for high achieving students, and several Bahraini banks sponsor employees or their children to study there, along with access to an international UK accredited degree and a world class Bloomberg equipped Dealing Room for practical trading experience.',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'image' => 'images/BIBF.jpg'
+            ],[
+            'name' => 'Kingdom University',
+            'overview' => 'Kingdom University (KU) is a leading private university in Bahrain, founded in 2001, offering accredited bachelor\'s and master\'s programs in engineering, architecture, business, law, and information technology on a modern campus in Riffa, with a focus on practical, career-oriented education and international standards.',
+            'requirements' => 'Applicants must hold a secondary school certificate or equivalent recognized by the Bahraini Ministry of Education, with a minimum required GPA (often around 70-80% depending on the program), provide original transcripts, and meet English language requirements through IELTS, TOEFL, or KU\'s internal test; some programs may require additional documents or interviews.',
+            'University_fees' => 'Annual tuition at Kingdom University varies by program and level, typically ranging from about 1,500 to 3,000 BHD per year for most undergraduate programs after partial scholarships, with higher fees for some engineering and business tracks; additional services such as registration and facilities are charged separately, and payment can be split into flexible installments over the semester.',
+            'available_scholarships' => 'Kingdom University offers partial merit-based scholarships (around 25-40% off tuition) for high achieving students in several programs, along with flexible payment plans and extra discounts for alumni, making private university education in Bahrain more accessible.',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'image' => 'images/KU.jpg'
+        ],[
+            'name' => 'British University of Bahrain',
+            'overview' => 'The British University of Bahrain (BUB) is a private university offering UK accredited bachelor\'s degrees awarded by the University of Salford, Manchester, in fields such as business, accounting, law, engineering, computer science, architecture, interior design, and psychology, with recognition from the Higher Education Council of Bahrain and other regional ministries.',
+            'requirements' => 'Applicants must have completed secondary education or an equivalent 12 year schooling system, meet the minimum GPA and subject requirements, and provide English language proficiency (IELTS/TOEFL or internal test) since instruction follows British standards and is delivered in English.',
+            'University_fees' => 'Annual tuition for most UK degree bachelor programs is around 7,000 BHD per year, paid in two or four instalments, with a one time registration fee of 250 BHD and an application fee of 50 BHD; fees are fully inclusive of tuition, facilities, and registration with the University of Salford, with no extra “hidden” charges.',
+            'available_scholarships' => 'BUB offers academic bursaries and scholarships (up to about 25-30% off tuition) for high achieving Bahraini and GCC students, as well as partnership scholarships with foundations such as AlMabarrah AlKhalifia, along with flexible payment plans and prompt payment discounts.',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'image' => 'images/BUBH.jpg'
+        ],[
+        'name' => 'Arab Open University',
+        'overview' => 'The Arab Open University (AOU) is a regional open university system with a branch in Bahrain, offering accredited bachelor and postgraduate programs in business, English, computer studies including IT, Cyber Security, AI, and Data Science, and education, using a flexible open learning model with blended online and in person support.',
+        'requirements' => 'Applicants must hold a recognized secondary school certificate or equivalent accredited by the Bahraini Ministry of Education, meet the minimum GPA and subject requirements for the chosen program, and pass an English language placement test or provide an accepted English proficiency score such as IELTS or TOEFL for English taught programs.',
+        'University_fees' => 'Total tuition for a four year bachelor program such as Business Administration is typically around 5,100 to 5,200 BHD for the full degree, paid across eight semesters, plus additional one time fees for orientation, registration, application, and graduation, with exact amounts depending on the specific program and course credit charges.',
+        'available_scholarships' => 'AOU Bahrain offers various fee reduction schemes and bursaries for high achieving students, partnership support programs, and flexible payment plans to spread the tuition cost over semesters, helping make distance and open learning programs more accessible in Bahrain.',
         'created_at' => now(),
         'updated_at' => now(),
-        'image' => 'images/BIBF.jpg'
-]
+        'image' => 'images/AOU.jpg'
+    ]
 
                 ];
 
