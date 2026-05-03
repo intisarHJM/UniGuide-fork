@@ -61,7 +61,6 @@ class UniversitySeeder extends Seeder
                 'updated_at' => now(),
                 'image' => 'images/AUBH2.jpg'
             ],
-<<<<<<< HEAD
                 [
                 'name' => 'American University of Bahrain',
                 'overview'=>'The American University of Bahrain is a private university ans is located in Riffa, it is a comprehensive purpose-built, American-model co-educational University. The university offers a holistic educational experience for students and a unique curriculum that fosters interaction and collaboration among students, faculty, and the professional community.',
@@ -84,9 +83,6 @@ class UniversitySeeder extends Seeder
             ]
 
          ]);
-=======
-                     ]);
->>>>>>> e82387f2dfc7dbeb18bc86368f7327426895810f
 
 
     }
