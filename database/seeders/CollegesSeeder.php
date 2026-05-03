@@ -53,6 +53,36 @@ class CollegesSeeder extends Seeder
            
         ]);
 
+        $AGU = \App\Models\University::where('name', 'Arabian Gulf University')->first();
+        $AGU ->colleges()->createMany ([
+            ['name' => 'College of Medicine & Health Sciences ' , 'created_at' => now(),'updated_at' => now()]
+        ]);
+
+        $RUW = \App\Models\University::where('name', 'Royal University for Women')->first();
+        $RUW ->colleges()->createMany ([
+            ['name' => 'College of Art & Design' , 'created_at' => now(),'updated_at' => now()], 
+            ['name' => 'College of Business and Law' , 'created_at' => now(),'updated_at' => now()], 
+            ['name' => 'College of Engineering and Technology' , 'created_at' => now(),'updated_at' => now()]
+        ]);
+
+        $AU = \App\Models\University::where('name', 'Ahlia University')->first();
+        $AU ->colleges()->createMany ([
+            ['name' => 'College of Arts and Sciences' , 'created_at' => now(),'updated_at' => now()], 
+            ['name' => 'College of Administrative and Financial Sciences' , 'created_at' => now(),'updated_at' => now()], 
+            ['name' => 'College of Engineering' , 'created_at' => now(),'updated_at' => now()],
+            ['name' => 'College of Information Technology' , 'created_at' => now(),'updated_at' => now()],
+            ['name' => 'College of Medical and Health Sciences' , 'created_at' => now(),'updated_at' => now()]
+        ]);
+
+        $ASU = \App\Models\University::where('name', 'Applied Science University')->first();
+        $ASU ->colleges()->createMany ([
+            ['name' => 'College of Administrative Sciences' , 'created_at' => now(),'updated_at' => now()], 
+            ['name' => 'College of Arts and Science' , 'created_at' => now(),'updated_at' => now()], 
+            ['name' => 'College of Law' , 'created_at' => now(),'updated_at' => now()],
+            ['name' => 'College of Engineering' , 'created_at' => now(),'updated_at' => now()]
+        ]);
+
+
 
 
     
