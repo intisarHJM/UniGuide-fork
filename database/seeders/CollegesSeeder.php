@@ -54,6 +54,13 @@ class CollegesSeeder extends Seeder
         ]);
 
         $AGU = \App\Models\University::where('name', 'Arabian Gulf University')->first();
+<<<<<<< Updated upstream
+=======
+        $AGU->colleges()->createMany([
+            ['name' => 'College of Medicine & Health Sciences' , 'created_at' => now(),'updated_at' => now()], 
+        ]);
+
+>>>>>>> Stashed changes
 
 
 
