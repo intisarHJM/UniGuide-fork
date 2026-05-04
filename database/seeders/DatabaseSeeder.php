@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UniversitySeeder::class,
             CollegesSeeder::class,
-            MajorSeeder::class
+            MajorSeeder::class,
+            ScholarshipsSeeder::class,
         ]);
     }
 }

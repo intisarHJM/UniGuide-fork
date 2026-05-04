@@ -8,4 +8,106 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-} 
+}
+
+
+/* Container & Layout */
+.scholarship-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 { color: #2d3748; font-size: 2.5rem; }
+
+/* Filter Styling */
+.filter-section {
+    background: #f7fafc;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.filter-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.input-group { display: flex; flex-direction: column; gap: 8px; }
+
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    width: 150px;
+}
+
+/* Buttons */
+.btn-search {
+    background: #4a5568;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-search:hover { background: #2d3748; }
+
+
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.scholarship-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.scholarship-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ebf8ff;
+    color: #3182ce;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.btn-details {
+    margin-top: 15px;
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+form.filter-form{
+display: flex;
+justify-content: center;
+align-items:center;
+}
