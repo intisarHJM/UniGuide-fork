@@ -23,4 +23,11 @@ class ScholarshipController extends Controller
 
         return view('scholarships', ['scholarships' => $scholarships]);
     }
+
+
+    public function show(Scholarship $scholarship)
+{
+    // Laravel automatically finds the scholarship by the ID in the URL
+    return view('scholarships-show', ['scholarship' => $scholarship]);
+}
 }

@@ -18,6 +18,9 @@ Route::get('/', [UniController::class, 'index'])->name('home');
 
 Route::get('/scholarships', [ScholarshipController::class, 'index'])->name('scholarships');
 
+// for the details page
+Route::get('/scholarships/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarships.show');
+
 Route::get('/academic-tests', function () {
     return view('academic');
 })->name('academic-tests');
