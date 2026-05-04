@@ -43,7 +43,7 @@
 
 <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
     <div>
-        <p>©contact info:</p>
+        <p></p>
     </div>
 </footer>
 

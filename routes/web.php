@@ -4,7 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\ChatBotController;
+<<<<<<< HEAD
 use App\Http\Controllers\ScholarshipController;
+=======
+use App\Http\Controllers\AIController;
+use App\Http\Controllers\AcademicController;
+>>>>>>> 66336fa2366a05b018ac53c050928a1b84a15180
 
 /* it says when someone visits / route them to the welcome
 page which is in the view folder
@@ -21,13 +26,13 @@ Route::get('/scholarships', [ScholarshipController::class, 'index'])->name('scho
 // for the details page
 Route::get('/scholarships/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarships.show');
 
-Route::get('/academic-tests', function () {
-    return view('academic');
-})->name('academic-tests');
-
 Route::get('/university/{name}', [UniController::class, 'show'])->name('university.show');
 
 Route::get('/college/{id}', [CollegeController::class, 'show'])->name('colleges.show');
 Route::get('/major/{id}', [MajorController::class, 'show'])->name('majors.show');
 
 Route::post('/chatbot', [ChatBotController::class, 'askDB']);
+Route::get('/academic-tests', [AcademicController::class, 'index'])->name('academic-tests');
+Route::post('/predict', [AIController::class, 'predict'])->name('ai.predict');
+Route::get('/questionnaire', [AIController::class, 'show'])->name('ai.questionnaire');
+
