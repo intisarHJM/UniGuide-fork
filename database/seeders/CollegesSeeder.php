@@ -95,6 +95,46 @@ class CollegesSeeder extends Seeder
                 ['name' => 'College of Science', 'created_at' => now(), 'updated_at' => now()],
                 ['name' => 'Bahrain Teachers College', 'created_at' => now(), 'updated_at' => now()]
             ]);
+
+
+            $KU = \App\Models\University::where('name', 'Kingdom University')->first();
+
+                $KU->colleges()->createMany([
+                ['name' => 'College of Engineering and Design', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'College of Business Administration', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'College of Law', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'College of Information Technology', 'created_at' => now(), 'updated_at' => now()],
+            ]);
+
+            $BIBF = \App\Models\University::where('name', 'Bahrain Institute of Banking and Finance')->first();
+
+            $BIBF->colleges()->createMany([
+            ['name' => 'BSc in Banking with Financial Technology', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'BSc in Banking & Finance', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'BSc in Accounting & Finance', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Diploma in Islamic Finance', 'created_at' => now(), 'updated_at' => now()],
+
+
+            ['name' => 'BSc Economics & Management', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'BSc Data Science and Business Analytics', 'created_at' => now(), 'updated_at' => now()],
+            ]);
+
+            $AOU = \App\Models\University::where('name', 'Arab Open University')->first();
+
+            $AOU->colleges()->createMany([
+                ['name' => 'Faculty of Business Studies', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'Faculty of Computer Studies', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'Faculty of Language Studies', 'created_at' => now(), 'updated_at' => now()],
+            ]);
+
+            $BUB = \App\Models\University::where('name', 'British University of Bahrain')->first();
+
+            $BUB->colleges()->createMany([
+                ['name' => 'College of Business', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'College of Engineering and Built Environment', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'College of Information and Communication Technology', 'created_at' => now(), 'updated_at' => now()],
+            ]);
+
         }
 
     }
