@@ -52,11 +52,11 @@
     <img src="{{ asset('images/chatbot.jpg') }}" alt="Chatbot Icon" class="w-6 h-6">   
 </div>
 
-<div id="box" class="hidden fixed bottom-20 right-6 w-80 bg-white shadow-xl rounded-xl flex flex-col mb-2">
+<div id="box" class="hidden fixed bottom-20 right-6 w-96 bg-white shadow-xl rounded-xl flex flex-col mb-2">
     <div class="bg-green-600 text-white p-3 rounded-t-xl">
         UniGuide Chatbot
     </div>
-    <div id="content" class="p-3 h-64 overflow-y-auto text-sm text-gray-700">
+    <div id="content" class="p-3 h-96 overflow-y-auto text-sm text-gray-700">
         Hello! How can I assist you today?
     </div>
 
@@ -75,16 +75,29 @@ function sendMessage() {
     let input = document.getElementById('user_input');
     let msg = input.value;
 
-    if (!msg.trim()) 
-        return;
+    if (!msg.trim()) return;
 
-    let message = document.getElementById('content');
+    let messageContainer = document.getElementById('content');
 
-    // Display the user's message in the chat box but make sure its secure (no XSS)
     let userBubble = document.createElement('div');
-    userBubble.className = "bg-green-100 text-green-900  rounded-xl px-3 py-2 mb-2 max-w-[75%] ml-auto border-l-4 border-green-600";
-    userBubble.textContent = "You: " +msg; // This will automatically escape any HTML tags in the message
-    message.appendChild(userBubble);
+    userBubble.className = "bg-green-100 text-green-900 rounded-xl px-3 py-2 mb-2 max-w-[75%] ml-auto border-l-4 border-green-600";
+    userBubble.textContent = "You: " + msg;
+    messageContainer.appendChild(userBubble);
+
+    let typingBubble = document.createElement('div');
+    typingBubble.id = "typing-indicator";
+    typingBubble.className = "bg-blue-100 text-blue-900 rounded-xl px-3 py-2 mb-2 max-w-[75%] border-l-4 border-blue-600";
+    typingBubble.innerHTML = `
+        <span style="display:inline-flex; gap:4px; align-items:center;">
+            <span class="dot" style="width:8px;height:8px;background:#3b82f6;border-radius:50%;animation:bounce 1s infinite;"></span>
+            <span class="dot" style="width:8px;height:8px;background:#3b82f6;border-radius:50%;animation:bounce 1s infinite 0.2s;"></span>
+            <span class="dot" style="width:8px;height:8px;background:#3b82f6;border-radius:50%;animation:bounce 1s infinite 0.4s;"></span>
+        </span>
+    `;
+    messageContainer.appendChild(typingBubble);
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    input.value = '';
 
     fetch('/chatbot', {
         method: 'POST',
@@ -96,17 +109,25 @@ function sendMessage() {
     })
     .then(response => response.json())
     .then(data => {
-        let message = document.getElementById('content');
+        let typing = document.getElementById('typing-indicator');
+        if (typing) typing.remove();
 
-        //the bot response
         let botBubble = document.createElement('div');
         botBubble.className = "bg-blue-100 text-blue-900 self-start rounded-xl px-3 py-2 mb-2 max-w-[75%] border-l-4 border-blue-600";
-        botBubble.textContent = "UniGuideBot: " + data.answer; // This will automatically escape any HTML tags in the message
-        message.appendChild(botBubble);
-        message.scrollTop = message.scrollHeight; // Scroll to the bottom of the chat
+        botBubble.innerHTML = "UniGuideBot: " + data.answer.replace(/\n/g, '<br>');
+        messageContainer.appendChild(botBubble);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
     })
+    .catch(() => {
+        let typing = document.getElementById('typing-indicator');
+        if (typing) typing.remove();
 
-    input.value = '';
+        let errorBubble = document.createElement('div');
+        errorBubble.className = "bg-red-100 text-red-900 rounded-xl px-3 py-2 mb-2 max-w-[75%] border-l-4 border-red-600";
+        errorBubble.textContent = "UniGuideBot: Something went wrong. Please try again.";
+        messageContainer.appendChild(errorBubble);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    });
 }
 
 //so when the user presses enter it will send the message as well
