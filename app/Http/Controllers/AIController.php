@@ -37,7 +37,7 @@ class AIController extends Controller
         ]);
 
         // Here we'll use this to call our python API:
-        $response = \Illuminate\Support\Facades\Http::post('http://localhost:8001/predict', $request->only([
+        $response = \Illuminate\Support\Facades\Http::post('http://localhost:8002/predict', $request->only([
             'math', 'creativity', 'problem_solving', 'communication_skills',
             'technology_interest', 'leadership', 'analytical_thinking',
             'attention_to_details', 'biology_interest', 'fitness_interest',

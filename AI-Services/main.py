@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from AI_model import load_data, cosine_recommendation, tree_predict, TRAITS
+import requests 
 
 app = FastAPI(title="UniGuide AI Major Reccommendation Service")
 
@@ -71,3 +72,28 @@ def predict(user: UserInput):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+class chatInput(BaseModel):
+    message: str 
+
+@app.post("/chatbot")
+def chatbot(chat: chatInput):
+    try: 
+        chatResponse = requests.post("http://localhost:11434/api/generate", json={
+            "model" : "llama3.2",
+            "prompt" : f"""You are UniGuide a helpful university assistant for students in Bahrain.
+            You will be helping students understand university majors, career paths and academic choices.
+            Keep ALL answers under 4 sentences maximum concise, frindly, simple and relevant to universities in Bahrain.
+            if asked about a major explain it to someone with no background to it, don't mention universities.
+            Only answer questions relevent to university, university majors, edecuation and career paths.
+            If asked anything unrelated, politely refuse and redirect them to education topics.
+
+            Student question: {chat.message}""", "stream" : False
+        })
+
+        data = chatResponse.json()
+        return {"answer": data["response"]}
+    
+    except Exception as e:
+        return{"answer" :  "Sorry, I'm having trouble thinking right now. Please try again later."}
