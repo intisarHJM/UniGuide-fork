@@ -4,23 +4,27 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\ChatBotController;
+<<<<<<< HEAD
+use App\Http\Controllers\ScholarshipController;
+=======
 use App\Http\Controllers\AIController;
 use App\Http\Controllers\AcademicController;
+>>>>>>> 66336fa2366a05b018ac53c050928a1b84a15180
 
-
-/* it says when someone visits / route them to the welcome 
- page which is in the view folder 
+/* it says when someone visits / route them to the welcome
+page which is in the view folder
 Route::get('/', function () {
     return view('home');
-}); 
+});
 this is the first method **/
 
-//this is with controller: 
-Route::get('/', [UniController::class, 'index'])->name('home'); 
+//this is with controller:
+Route::get('/', [UniController::class, 'index'])->name('home');
 
-Route::get('/scholarships', function () {
-    return view('scholarships');
-})->name('scholarships');
+Route::get('/scholarships', [ScholarshipController::class, 'index'])->name('scholarships');
+
+// for the details page
+Route::get('/scholarships/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarships.show');
 
 Route::get('/university/{name}', [UniController::class, 'show'])->name('university.show');
 
