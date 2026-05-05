@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('duration'); 
             $table->string('Study_Plan')->nullable();
+            $table->string('Teaching_Methods')->nullable();
+            $table->string('Assessment_Methods')->nullable();
             $table->string('Skills')->nullable();
             $table->string('Career_Opportunities')->nullable();
             $table->string('video_link')->nullable();

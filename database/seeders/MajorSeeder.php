@@ -841,7 +841,8 @@ class MajorSeeder extends Seeder
         ],
         [
             'name' => 'Bachelor of  Industrial Design and Process  Engineering',
-            'description' =>'Industrial Design and Process engineering focuses on improving how products are designed and how systems work in industries. It teaches you how to make processes faster, cheaper, safer and more efficient. Students learn how factories, companies and systems operate and how to design better products while considering people, technology and the environment.',
+            'description' =>'Industrial Design and Process engineering focuses on improving how products are designed and how systems work in industries. It teaches you how to make processes faster, cheaper, safer and more efficient. Students learn how factories, companies and systems operate and how to design better products while considering people, technology and the 
+            environment.',
             'duration' => '4 years',
             'Study_Plan' => 
             [
@@ -873,5 +874,206 @@ class MajorSeeder extends Seeder
         foreach($majors as $major){
             $SoE->majors()->updateOrCreate(['name' => $major['name']], $major);
         }
+
+        $RCSI = \App\Models\University::where('name', 'Royal College of Surgeons in Ireland')->firstOrFail();
+        $SoM = $RCSI->colleges()->where('name', 'School of Medicine')->firstOrFail(); 
+        $majors= [
+        [
+            'name' => 'Bachelor of Medicine',
+            'description' => 'Medicine at RCSI Bahrain is focused on preparing students to become highly skilled doctors through a globally recognized program. Students gain strong foundations in biomedical sciences, clinical knowledge, and patient care from early stages. The program emphasizes hands-on clinical experience, communication skills, professionalism, and 
+            real-world healthcare environments. Graduates receive internationally recognized degrees from RCSI and the National University of Ireland, allowing global career opportunities.',
+            'duration' => '5 to 6 years',
+            'Study_Plan' => 
+            [
+		        'Foundation Year' => 'Gives an introduction to biomedical sciences, chemistry, human biology and basic medical concepts. Not all students go through a foundation year.',
+                'Year 1' => 'Will focus on basic biochemistry, anatomy, pharmacology and an introduction to disease mechanisms with cases based learning.',
+                'Year 2' => 'Will focus on developing communication, diagnostic skills and an understanding of major diseases and body systems.',
+                'Year3' => 'Students will start clinical learning in hospitals, do research projects and will learn evidence-based medicine and public health, year 3 will not consist of 2 semesters, it will be delivered from September to May.',
+                'Year 4' => 'The study will be in the form of  clinical rotation  in various of areas such as surgery, Ophthalmology, ENT, psychiatry, family medicine, genecology and pediatrics',
+		        'Year 5' => 'For the year the student will be working in a medicine and surgery rotation for 24 weeks, then they need to fulfil a sub-internship.',
+            ],
+            'Teaching_Methods' => 
+            [
+                'Case-Based Learning (CBL)',
+                'Small group sessions',
+                'Clinical placements in hospitals',
+                'Simulation and practical labs'
+            ],
+
+            'Assessment_Methods' => 
+            [
+                'MCQ exams',
+                'OSCE (clinical exams)',
+                'Coursework and research projects',
+                'Continuous assessment and GPA system'
+            ],
+
+            'Skills' => 
+            [
+                'Excellent communication and patient interaction abilities.',
+                'Develop diagnostic and clinical decision making skills.',
+                'Develop the ability to work under pressure.',
+                'Have a high level of professionalism, ethics and responsibility.',
+            ],
+            'Career_Opportunities' => 
+            [
+                'Medical Doctor (Family Doctor)',
+                'Medical Consultant',
+                'Healthcare Administrator',
+                'Clinical Researcher'
+            ],
+            'video_link' => 'Videos/MedicineRCSI.mp4',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ] ]; 
+        foreach($majors as $major){
+                    $SoM->majors()->updateOrCreate(['name' => $major['name']], $major);
+                };
+            $SoN = $RCSI->colleges()->where('name', 'School of Nursing')->firstOrFail();
+        $majors= [
+        [
+            'name' => 'Bachelor of Nursing ',
+            'description' => 'Nursing at RCSI Bahrain prepares students to become compassionate, skilled and professional nurses through a globally recognized program. Students develop strong clinical, communication and patient care skills through a combination of academic learning and hands-on clinical placements. The program emphasizes teamwork, leadership, ethical 
+            practice and real-world healthcare experience.',
+            'duration' => '4 years',
+            'Study_Plan' => [
+                'Year 1' => 'Focuses introducing nursing fundamentals, physiology, communication and anatomy with early clinical placement.',
+                'Year 2' => 'Will focus on public health, nursing care, infection control, older persons health care, special needs and will continue with clinical training.',
+                'Year3' => 'Consist of advanced nursing practices such as maternal care, adult health, child and adolescent health, and critical care with clinical placement, also will learn ethics and legal issues.',
+                'Year 4' => 'Focuses full clinical immersion, standardized practice, and preparation for a professional nursing career.',
+            ],
+            'Teaching_Methods' => [
+                'Lectures and interactive sessions',
+                'Case-based learning',
+                'Simulation and skills laboratories',
+                'Supervised clinical placements in hospitals',
+                'Small group learning and practical sessions'
+            ],
+
+            'Assessment_Methods' => [
+                'Multiple-choice questions (MCQ)',
+                'Short-answer exams',
+                'Objective Structured Clinical Examination (OSCE)',
+                'Projects and assignments',
+                'Oral presentations',
+                'Clinical evaluation reports'
+            ],
+            'Skills' => [
+                'Patient care and clinical skills.', 
+                'Develop strong communication and teamwork skills.',
+                'The ability to work for long hours and under pressure.',
+                'Have an understanding of ethics and patient safety and privacy.'
+            ],
+            'Career_Opportunities' => [
+                'Clinical Nurse specialist',
+                'Community Health Nurse', 
+                'Nurse Educator',
+            ],
+            'video_link' => 'Videos/NursingRCSI.mp4',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ] ]; 
+
+        foreach($majors as $major){
+                    $SoN->majors()->updateOrCreate(['name' => $major['name']], $major);
+                };
+
+        $GU = \App\Models\University::where('name', 'Gulf University')->firstOrFail();
+        $CoE = $GU->colleges()->where('name', 'College of Engineering')->firstOrFail(); 
+        $majors =[
+	        [
+            'name' => 'Bachelor in Interior Design Engineering',
+            'description' => 'Interior Design Engineering combines creativity with engineering to design functional, safe and visually appealing indoor spaces. Students learn how to design interiors while understanding construction, materials, lighting, acoustics and building systems. The program mixes art, design, and technology to prepare students for real-world 
+            interior and architectural projects with a focus on sustainability and modern design practices.',
+            'duration' => '4 years',
+            'Study_Plan' => [
+                'Year 1' => 'Will focus on building the fundamental knowledges in design, engineering basics, mathematics, materials and communication skills.',
+                'Year 2' => 'Will introduce interior design studios, construction materials, design history and digital design tools, with more focused practical projects.',
+                'Year3' => 'Will be more focused on advanced interior design, building systems, sustainability, lighting and detailed design projects.',
+                'Year 4' => 'Focus on graduation project, interior detailing, furniture design, professional practice and applying all learned skills in real world scenarios.',
+            ],
+            'Skills' => 
+            [
+                'Develop creative thinking and design skills',
+                'Gain an understanding of construction materials and building systems.',
+                'The ability to design functional and aesthetic interior spaces.', 
+		        'The ability to use design software and digital tools.'
+            ],
+            'Career_Opportunities' => 
+            [
+                'Interior Design Engineer', 
+                'Exhibition Designer',
+                'Interior Project Manager',
+                'Furniture and Product Designer'
+            ],
+            'video_link' =>'Videos/interiorGU.mp4',
+            'created_at' => now(),
+            'updated_at' => now(),
+            ], 
+	        [
+            'name' => 'Bachelor of Mechanical Engineering',
+            'description' => 'Mechanical Engineering focuses on designing, building and improving machines and mechanical systems used in everyday life. Students learn how to apply physics, mathematics and materials science to develop solutions for real-world engineering problems. The program combines theory with hands-on practical work in labs and workshops, preparing students to work in industries such as manufacturing, energy, automotive and more, with a focus on innovation and sustainability.',
+            'duration' => '4 years',
+            'Study_Plan' => [
+                'Year 1' => 'Focuses on building a strong foundation in mathematics, engineering basics and general university skills before entering the core program.',
+                'Year 2' => 'Will introduce basic engineering concepts such as design, mathematics, material science, thermo-fluid and electrical principles.',
+                'Year3' => 'Will be more focused on advanced topics such as solid mechanics, control systems, engineering design and advanced mathematics, with practical project applications ',
+                'Year 4' => 'Focus on graduation project, and choose advanced topics to study such as manufacturing, fluid mechanics corrosion engineering and mechanisms and machines.',
+            ],
+            'Skills' => 
+            [
+                'The ability to design and analyze mechanical systems.',
+                'Gain an understanding of engineering materials and manufacturing processes.',
+                'The ability to design functional and aesthetic interior spaces.', 
+		        'The ability to use engineering software and simulation tools.'
+            ],
+            'Career_Opportunities' => 
+            [
+                'Mechanical Engineer', 
+                'Manufacturing Engineer',
+                'Aerospace Engineer',
+                'Automotive Engineer', 
+		        'Energy or Renewable Energy Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+            ],
+	        [
+            'name' => 'Bachelor of Electrical and Electronic Engineering',
+            'description' => 'Electrical and Electronic Engineering focuses on designing, developing and improving electrical systems and electronic devices used in everyday life. Students learn how electricity works, how to build circuits, and how to work with systems like control systems, embedded systems and communication technologies. The program combines theory with hands-on lab work, preparing students to work in industries such as energy, telecommunications, automation and technology, with a focus on innovation and sustainability.',
+            'duration' => '4 years',
+            'Study_Plan' => [
+                'Year 1' => 'Focuses on building a strong foundation in mathematics, engineering basics, physics and an introduction to electrical systems and engineering design.',
+                'Year 2' => 'Will introduce core electrical and electronic concepts such as programming, curcuits, engineering design and computer systems with practical project applications.',
+                'Year3' => 'Will be more focused on advanced topics such as microprocessors, control systems, electronics, electromagnetism design and advanced mathematics, with more practical project applications ',
+                'Year 4' => 'Focus on graduation project, and  advanced topics to study such as embedded systems and signal processing',
+            ],
+            'Skills' => 
+            [
+                'The ability to design and analyze electrical and electronic systems.',
+                'Gain an understanding of circuits, embedded systems and control systems.',
+                'The ability to design functional and aesthetic interior spaces.', 
+		        'The ability to use engineering software and simulation tools.',
+		        'Understanding of basic programming.'
+            ],
+            'Career_Opportunities' => 
+            [
+                'Electrical Engineer', 
+                'Electronics Engineer',
+                'Telecommunication Engineer',
+                'Automation Engineer', 
+		        'Power System Engineer'
+            ],
+            'video_link' =>null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]
+
+        ];
+        foreach($majors as $major){
+                    $CoE->majors()->updateOrCreate(['name' => $major['name']], $major);
+                };
+
     }
 }
