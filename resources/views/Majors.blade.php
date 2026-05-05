@@ -40,6 +40,28 @@
             </div>
         </div>
 
+        @if ($major->Teaching_Methods)
+            <div class="bg-white p-6 rounded-xl shadow mb-4">
+                <h2 class="text-2xl font-semibold mb-4">Teaching Methods: </h2>
+                <ul class ="grid md:grid-cols-2 gap-2 text-gray-700 mb-2">
+                    @foreach($major->Teaching_Methods as $method)
+                        <li>• {{ $method }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
+        @if ($major->Assessment_Methods)
+            <div class="bg-white p-6 rounded-xl shadow mb-4">
+                <h2 class="text-2xl font-semibold mb-4">Assessment Methods: </h2>
+                <ul class ="grid md:grid-cols-2 gap-2 text-gray-700 mb-2">
+                    @foreach($major->Assessment_Methods as $method)
+                        <li>• {{ $method }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif            
+
         <div class="bg-white p-6 rounded-xl shadow mb-4">
             <h2 class="text-2xl font-semibold mb-4">Skills you will gain: </h2>
             <ul class ="grid md:grid-cols-2 gap-2 text-gray-700 mb-2">
@@ -67,6 +89,5 @@
                 Back to College
             </a>
         </div>
-  
     </div>
 </x-layout>

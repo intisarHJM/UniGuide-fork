@@ -19,11 +19,8 @@ class DatabaseSeeder extends Seeder
             UniversitySeeder::class,
             CollegesSeeder::class,
             MajorSeeder::class,
-<<<<<<< HEAD
             ScholarshipsSeeder::class,
-=======
             AIDataSeeder::class
->>>>>>> 66336fa2366a05b018ac53c050928a1b84a15180
         ]);
     }
 }

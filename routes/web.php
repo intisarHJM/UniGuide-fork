@@ -4,12 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\ChatBotController;
-<<<<<<< HEAD
 use App\Http\Controllers\ScholarshipController;
-=======
 use App\Http\Controllers\AIController;
 use App\Http\Controllers\AcademicController;
->>>>>>> 66336fa2366a05b018ac53c050928a1b84a15180
 
 /* it says when someone visits / route them to the welcome
 page which is in the view folder

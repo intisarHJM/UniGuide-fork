@@ -13,6 +13,8 @@ class Major extends Model
 
     protected $casts = [
     'Study_Plan' => 'array',
+    'Teaching_Methods' => 'array',
+    'Assessment_Methods' => 'array',
     'Skills' => 'array',
     'Career_Opportunities' => 'array',
     ];
