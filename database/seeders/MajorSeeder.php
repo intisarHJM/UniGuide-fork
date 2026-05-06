@@ -297,6 +297,7 @@ class MajorSeeder extends Seeder
         foreach($majors as $major){
             $SoB->majors()->updateOrCreate(['name' => $major['name']], $major);
         } 
+        
 
         $SoLM = $BP->colleges()->where('name', 'School of Logistics and Maritime Studies')->firstOrFail();
         $majors= [ 
@@ -978,6 +979,8 @@ class MajorSeeder extends Seeder
                     $SoN->majors()->updateOrCreate(['name' => $major['name']], $major);
                 };
 
+                
+
         $GU = \App\Models\University::where('name', 'Gulf University')->firstOrFail();
         $CoE = $GU->colleges()->where('name', 'College of Engineering')->firstOrFail(); 
         $majors =[
@@ -1075,5 +1078,98 @@ class MajorSeeder extends Seeder
                     $CoE->majors()->updateOrCreate(['name' => $major['name']], $major);
                 };
 
+        $AGU = \App\Models\University::where('name', 'RArabian Gulf University')->firstOrFail();
+        $CMHS = $AGU->colleges()->where('name', 'College of Medicine & Health Sciences')->firstOrFail(); 
+        $majors=[
+            [
+                'name' => 'Doctor of Medicine',
+                'description' => 'Doctor of Medicine at Arabian Gulf University prepares students to become professional doctors through strong medical education and clinical training. The program focuses on biomedical sciences, patient care, communication skills, and real healthcare practice. Students gain knowledge in human body systems, disease prevention, diagnosis, and treatment to prepare them for medical careers.',
+                'duration' => '6 years',
+                'Study_Plan' => [
+                    'Year 1' => 'Focuses on basic medical sciences, human biology, chemistry, and introduction to medicine.',
+                    'Year 2' => 'Students study body systems, anatomy, physiology, and basic disease concepts.',
+                    'Year 3' => 'Focuses on clinical knowledge, pathology, pharmacology, and medical skills.',
+                    'Year 4' => 'Students begin more clinical training and learn about different medical specialties.',
+                    'Year 5' => 'Focuses on hospital training, patient care, diagnosis, and treatment practice.',
+                    'Year 6' => 'Students complete advanced clinical rotations and prepare for professional medical practice.',
+                ],
+                'Teaching_Methods' => [
+                    'Lectures',
+                    'Practical laboratories',
+                    'Clinical training',
+                    'Small group learning',
+                    'Hospital-based learning'
+                ],
+                'Assessment_Methods' => [
+                    'Written exams',
+                    'Practical exams',
+                    'Clinical exams',
+                    'Assignments',
+                    'Continuous assessment'
+                ],
+                'Skills' => [
+                    'Develop strong medical knowledge.',
+                    'Improve communication with patients.',
+                    'Develop clinical decision making skills.',      
+                    'Work professionally in healthcare environments.',
+                ],
+                'Career_Opportunities' => [
+                    'Medical Doctor',
+                    'Hospital Physician',
+                    'Clinical Researcher',
+                    'Healthcare Specialist'
+                ],
+                'video_link' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],  
+            [
+                'name' => 'Bachelor of Science in Nursing',
+                'description' => 'Bachelor of Science in Nursing at Arabian Gulf University prepares students to become qualified nurses with strong knowledge in patient care, health sciences, and clinical practice. The program focuses on nursing skills, communication, ethics, patient safety, and practical healthcare training.',
+                'duration' => '4 years',
+                'Study_Plan' => [
+                    'Year 1' => 'Focuses on basic nursing concepts, anatomy, physiology, and communication skills.',
+                    'Year 2' => 'Students learn nursing care, public health, infection control, and continue clinical training.',
+                    'Year 3' => 'Focuses on advanced nursing practice, maternal care, adult health, and child health.',
+                    'Year 4' => 'Students complete clinical practice and prepare for professional nursing work.',
+                ],
+                'Teaching_Methods' => [
+                    'Lectures',
+                    'Clinical placements',
+                    'Simulation labs',
+                    'Practical sessions',
+                    'Small group learning'
+                ],
+                'Assessment_Methods' => [
+                    'Written exams',
+                    'Practical exams',
+                    'Clinical evaluation',
+                    'Assignments',
+                    'Oral presentations'
+                ],
+                'Skills' => [
+                    'Patient care and nursing skills.',
+                    'Strong communication and teamwork.',
+                    'Understanding of ethics and patient safety.',
+                    'Ability to work under pressure.',
+                ],
+                'Career_Opportunities' => [
+                    'Registered Nurse',
+                    'Community Health Nurse',
+                    'Clinical Nurse',
+                    'Nurse Educator'
+                ],
+                'video_link' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+        ];
+        foreach($majors as $major){
+            $CMHS->majors()->updateOrCreate(['name' => $major['name']], $major);
+        };
+
+
     }
+
 }
