@@ -19,13 +19,11 @@ class UniController extends Controller
         $PublicUniversities = [
             [
             'University' => 'University of Bahrain',
-            'Overview' => '......',
             'Type' => 'Public University',
             'Image' => 'images/UoB.jpg'
             ],
             [
             'University' => 'Bahrain Polytechnic',
-            'Overview' => '......',
             'Type' => 'Public University',
             'Image' => 'images/Poly.jpg'
             ],
@@ -40,68 +38,57 @@ class UniController extends Controller
         $PrivateUniversities = [
         [
             'University' => 'Royal College of Surgeons in Ireland',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/RCSI.jpg'
             ]
             ,
             [
             'University' => 'Gulf University',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/GulfUni.jpg'
             ],
             [
             'University' => 'American University of Bahrain',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/AUBH.jpg'
             ],
             [
             'University' => 'University of Technology',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/UTB.jpg'
             ],
             [
             'University' => 'Ahlia University',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/AU.jpg'
             ],
             [
             'University' => 'Royal University for Women',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/RUW.jpg'
             ],
             [
             'University' => 'Kingdom University',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/KU.jpg'
             ],
             [
             'University' => 'Bahrain Institute of Banking and Finance',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/BIBF.jpg'
             ],
             [
             'University' => 'Arab Open University',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/AOU.jpg'
             ],
             [
             'University' => 'Applied Science University',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/ASU.jpg'
             ],
             [
             'University' => 'British University of Bahrain',
-            'Overview' => '......',
             'Type' => 'Private University',
             'Image' => 'images/BUBH.jpg'
             ]

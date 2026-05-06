@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>Home Page</x-slot:title>
-    <h1 class ="text-center text-5xl font-bold mt-6">Welcome to UniGude</h1>
+    <h1 class ="text-center text-5xl font-bold mt-6">Welcome to UniGuide</h1>
     <h3 class= "text-center text-2xl text-gray-500 mt-4 " >Find Your Perfect Academic Path</h3>
     <div class=" flex justify-center mt-2">
         <input type ="text" placeholder="Search for University..." class = "text-center w-1000 h-9 bg-base-100 rounded-lg border border-gray-300  focus:ring " >
@@ -22,7 +22,6 @@
                 <div class="card-body">
                 <div>
                 <div class="font-semibold">{{ $University['University'] }}</div>
-                <div class="mt-1">{{ $University['Overview'] }}</div>
                 <div class="text-sm text-gray-500 mt-2">{{ $University['Type'] }}</div>
                 </div>
                 </div>
@@ -46,7 +45,6 @@
             <div class="card-body">
             <div>
             <div class="font-semibold">{{ $University['University'] }}</div>
-            <div class="mt-1">{{ $University['Overview'] }}</div>
             <div class="text-sm text-gray-500 mt-2">{{ $University['Type'] }}</div>
             </div>
             </div>
