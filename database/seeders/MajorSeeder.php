@@ -1081,7 +1081,7 @@ class MajorSeeder extends Seeder
             $CoE->majors()->updateOrCreate(['name' => $major['name']], $major);
         };
 
-        $AGU = \App\Models\University::where('name', 'RArabian Gulf University')->firstOrFail();
+        $AGU = \App\Models\University::where('name', 'Arabian Gulf University')->firstOrFail();
         $CMHS = $AGU->colleges()->where('name', 'College of Medicine & Health Sciences')->firstOrFail();
         $majors = [
             [
@@ -1626,7 +1626,7 @@ class MajorSeeder extends Seeder
 
         $AU = \App\Models\University::where('name', 'Ahlia University')->firstOrFail();
 
-        $Arts = $AU->colleges()->where('name', 'College of Arts & Science')->firstOrFail();
+        $Arts = $AU->colleges()->where('name', 'College of Arts and Science')->firstOrFail();
         $majors = [
             [
                 'name' => 'Bachelor of Mass Communication and Public Relations',
@@ -1660,7 +1660,7 @@ class MajorSeeder extends Seeder
             $Arts->majors()->updateOrCreate(['name' => $major['name']], $major);
         };
 
-        $Business = $AU->colleges()->where('name', 'College of Administrative & Financial Sciences')->firstOrFail();
+        $Business = $AU->colleges()->where('name', 'College of Administrative and Financial Sciences')->firstOrFail();
         $majors = [
             [
                 'name' => 'Bachelor of Banking and Finance',
@@ -1763,7 +1763,7 @@ class MajorSeeder extends Seeder
         };
 
 
-        $Medical = $AU->colleges()->where('name', 'College of Medical & Health Sciences')->firstOrFail();
+        $Medical = $AU->colleges()->where('name', 'College of Medical and Health Sciences')->firstOrFail();
         $majors = [
             [
                 'name' => 'Bachelor of Science in Physiotherapy',
