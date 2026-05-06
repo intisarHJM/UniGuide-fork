@@ -15,11 +15,11 @@
 <body class="min-h-screen flex flex-col bg-base-200 font-sans">
 <nav class="navbar bg-base-100 sticky top-0 z-50">
 <div class="navbar-start">
-<a href="/" class="btn btn-ghost text-xl">UniGude</a>
+<a href="/" class="btn btn-ghost text-xl">UniGuide</a>
 <div class="flex space-x-4">
-        <a href="{{ route('home') }}"  class="btn btn-ghost px-3 py-2 font-medium text-gray-700 hover:text-gray-900 shadow-md">Home</a>
-        <a href="{{ route('scholarships') }}" class="btn btn-ghost px-3 py-2 font-medium text-gray-700 hover:text-gray-900 shadow-md  ">Scholerships</a>
-        <a href="{{ route('academic-tests') }}" class="btn btn-ghost px-3 py-2 font-medium text-gray-700 hover:text-gray-900 shadow-md">Academic test</a>
+        <a href="{{ route('home') }}"  class="btn btn-ghost px-3 py-2 font-medium text-gray-700 hover:text-gray-900 shadow-md {{ request()->routeIs('home') ? 'underline decoration-2 underline-offset-4' : '' }}" >Home</a>
+        <a href="{{ route('scholarships') }}" class="btn btn-ghost px-3 py-2 font-medium text-gray-700 hover:text-gray-900 shadow-md {{ request()->routeIs('scholarships') ? 'underline decoration-2 underline-offset-4' : '' }} ">Scholerships</a>
+        <a href="{{ route('academic-tests') }}" class="btn btn-ghost px-3 py-2 font-medium text-gray-700 hover:text-gray-900 shadow-md {{ request()->routeIs('academic-tests') ? 'underline decoration-2 underline-offset-4' : '' }}">Academic test</a>
     </div>
 </div>
 <!--<nav class = "bg-white shadow-md">

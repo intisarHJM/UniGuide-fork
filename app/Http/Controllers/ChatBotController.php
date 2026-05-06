@@ -31,6 +31,7 @@ class ChatBotController extends Controller
         if($this->isHelp($message)){
             return response()->json([
                 'answer' => "Here what I can help you with:\n 
+                ' Ask 'Explain to me X major'\n 
                 - Ask 'What majors does X university offers?'\n
                 - Ask 'What university offers X major?'\n
                 - Ask 'I need help deciding my major'" 
